@@ -6,9 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width-device-width, initial-scale = 1.0">
         <title>Banks</title>
-        <body>        
-            <script id = "negro" src="script.js">
-            </script>           
+        <body>         
+                             
             <style>
                 
                 body{             
@@ -30,22 +29,59 @@ font-size: 35px;
     text-align: center;
 }
 #tres{
-background-color: #03fa03;
-border-color: #03fa03;
+
+text-align: center;
 
 }
 #quatro{
     color: white;
     background-color: blue;
     border-color: rgb(255, 251, 0);
+    text-align: center;
+    font-size: 20px;
+}
+#cinco{
+    color: white;
+    background-color: blue;
+    border-color: rgb(255, 251, 0);
+    text-align: center;
+    font-size: 20px;
 }
                 </style>  
-                
+      
 <p id="um">BANCOS</p>
-<p id="dois">Favor se deseja ver todas as requisições digite REQ se deseja 
-    ver por código digite em espécifico digite um número entre 1 e 340: <input id ="tres"></p>
-    <button id="limpa">Enter</button>     
+<p id="dois">Escolha entre as opcões:</p>
+    <p id = "tres"><button id="quatro">Ver todas as requisições</button>     
+    <input id="cinco">ver por código</input></p>
+    <p id="seis"></p>
+    <ul id="sete"></ul>
     <script>
+document.getElementById("cinco").onclick = function
+larica() {
+
+}
+</script>
+
+<script>
+    document.getElementById("quatro").onclick = function
+sala() {
+    const fetchBanks = () =>{
+        const url = `https://brasilapi.com.br/api/banks/v1`
+    
+        fetch(url)
+        .then(response => response.json())
+        .then(Banks => {
+
+            var code;
+
+            document.getElementById("seis").innerHTML = "RESULTADOS APARECEM NO CONSOLE (basta pressionar 12 ou inspecionar elemente e clique em console)";
+            document.getElementById("sete").innerHTML = Banks;
+            console.log(Banks);
+        
+      })
+    }
+    fetchBanks();}
+
         </script>
         </body>
     </head>
